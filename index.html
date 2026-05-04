@@ -1,729 +1,1166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidushi Srivastava — Product Marketing & UX Writing</title>
-  <meta name="description" content="Product Marketing and UX Writing professional specializing in SaaS website content strategy, landing pages, and conversion copywriting." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidushi Srivastava — Product Marketing & UX Writing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    :root {
-      --accent: #1a1a2e;
-      --accent2: #4a4e8a;
-      --light: #f8f7f4;
-      --mid: #e8e6e1;
-      --text: #1c1c1e;
-      --muted: #6b6b72;
-      --tag-bg: #ededf5;
-      --tag-color: #4a4e8a;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
+<style>
+  :root {
+    --ink: #1a1614;
+    --paper: #f5f0ea;
+    --cream: #ede8e0;
+    --accent: #c8522a;
+    --accent-light: #e8836a;
+    --muted: #7a7068;
+    --border: #d4cec4;
+    --white: #fdfaf6;
+  }
 
-    html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: var(--sans);
-      background: var(--light);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.7;
-    }
+  html { scroll-behavior: smooth; }
 
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.1rem 3rem;
-      background: rgba(248,247,244,0.93);
-      backdrop-filter: blur(10px);
-      border-bottom: 0.5px solid var(--mid);
-    }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.3rem; font-weight: 600;
-      letter-spacing: 0.02em; color: var(--accent);
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none; font-size: 12px;
-      color: var(--muted); letter-spacing: 0.06em;
-      text-transform: uppercase; transition: color 0.2s;
-      font-weight: 400;
-    }
-    .nav-links a:hover { color: var(--text); }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-    /* LAYOUT */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
-    section { padding: 5.5rem 0; }
-    .divider { height: 0.5px; background: var(--mid); }
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(245,240,234,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
 
-    /* SECTION LABELS */
-    .section-label {
-      font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--accent2);
-      font-weight: 500; margin-bottom: 0.8rem;
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .section-label::before {
-      content: ''; display: inline-block;
-      width: 20px; height: 1px; background: var(--accent2);
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: 2.7rem; font-weight: 600;
-      color: var(--accent); line-height: 1.2; margin-bottom: 1rem;
-    }
-    .section-sub {
-      font-size: 15px; color: var(--muted);
-      max-width: 500px; line-height: 1.75;
-    }
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; top: -20%; right: -10%;
+    width: 60vw; height: 80vh;
+    background: radial-gradient(ellipse, rgba(200,82,42,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-subtitle {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-body {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--white);
+    border: none;
+    padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-secondary {
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+    padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
-    /* HERO */
-    #hero { padding: 7rem 0 6rem; }
-    .hero-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4.5rem; align-items: center;
-    }
-    .hero-eyebrow {
-      font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--accent2);
-      font-weight: 500; margin-bottom: 1.2rem;
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: inline-block;
-      width: 24px; height: 1px; background: var(--accent2);
-    }
-    .hero-name {
-      font-family: var(--serif);
-      font-size: 4.4rem; font-weight: 600;
-      line-height: 1.08; letter-spacing: -0.01em;
-      color: var(--accent); margin-bottom: 1rem;
-    }
-    .hero-title {
-      font-size: 12px; color: var(--muted);
-      letter-spacing: 0.08em; text-transform: uppercase;
-      margin-bottom: 1.6rem; font-weight: 400;
-    }
-    .hero-desc {
-      font-size: 16px; line-height: 1.85;
-      color: #3a3a42; margin-bottom: 2.5rem; max-width: 440px;
-    }
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  /* Hero stats */
+  .hero-right {
+    display: flex; flex-direction: column; gap: 1.5rem;
+    padding-left: 2rem;
+    border-left: 1px solid var(--border);
+  }
+  .hero-stat {
+    padding: 1.5rem 2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    position: relative;
+    animation: fadeSlideUp 0.8s ease both;
+  }
+  .hero-stat:nth-child(1) { animation-delay: 0.2s; }
+  .hero-stat:nth-child(2) { animation-delay: 0.35s; margin-left: 2rem; }
+  .hero-stat:nth-child(3) { animation-delay: 0.5s; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+  .hero-quote {
+    margin-top: 1rem;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--accent);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.6;
+    background: var(--cream);
+    animation: fadeSlideUp 0.8s ease 0.65s both;
+  }
 
-    .btn-primary {
-      padding: 0.8rem 2.2rem;
-      font-family: var(--sans); font-size: 12px;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      background: var(--accent); color: var(--light);
-      border: none; cursor: pointer; text-decoration: none;
-      display: inline-block;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    .btn-outline {
-      padding: 0.8rem 2.2rem;
-      font-family: var(--sans); font-size: 12px;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      background: transparent; color: var(--accent);
-      border: 0.5px solid var(--accent); cursor: pointer;
-      text-decoration: none; display: inline-block;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { background: var(--accent); color: var(--light); transform: translateY(-1px); }
+  /* ── SECTIONS ── */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 24px; height: 1px;
+    background: var(--accent);
+  }
+  .section-heading {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .section-intro {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.75;
+    margin-bottom: 4rem;
+  }
 
-    .hero-visual { display: flex; flex-direction: column; gap: 1rem; }
-    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hero-stat-card {
-      background: white; border: 0.5px solid var(--mid);
-      padding: 1.5rem 1.8rem;
-    }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.6rem; font-weight: 600;
-      color: var(--accent); line-height: 1;
-    }
-    .stat-label {
-      font-size: 12px; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--muted); margin-top: 0.35rem;
-    }
-    .hero-quote {
-      background: var(--accent); padding: 1.5rem 1.8rem;
-    }
-    .hero-quote p {
-      font-family: var(--serif); font-size: 1.2rem;
-      font-style: italic; font-weight: 400;
-      color: rgba(255,255,255,0.85); line-height: 1.55;
-    }
+  /* ── ABOUT ── */
+  #about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .about-body p { margin-bottom: 1.25rem; }
+  .about-body strong { color: var(--ink); font-weight: 600; }
+  .tools-grid {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  .tool-tag {
+    padding: 0.4rem 1rem;
+    border: 1.5px solid var(--border);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--white);
+  }
+  .about-aside { display: flex; flex-direction: column; gap: 1.5rem; }
+  .aside-card {
+    padding: 1.75rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+  }
+  .aside-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .aside-card ul { list-style: none; padding: 0; }
+  .aside-card li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .aside-card li:last-child { border-bottom: none; }
+  .aside-card li::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 0.75rem;
+  }
 
-    /* ABOUT */
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: start; margin-top: 3.5rem;
-    }
-    .about-text p {
-      color: #3a3a42; font-size: 15.5px;
-      line-height: 1.88; margin-bottom: 1.3rem;
-    }
-    .about-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .about-list li {
-      font-size: 14px; color: var(--muted);
-      display: flex; align-items: flex-start; gap: 0.6rem;
-    }
-    .about-list li::before {
-      content: '→'; color: var(--accent2);
-      font-size: 13px; flex-shrink: 0; margin-top: 0.1rem;
-    }
-    .tool-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
-    .tag {
-      font-size: 11px; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 0.35rem 0.9rem;
-      background: var(--tag-bg); color: var(--tag-color); font-weight: 500;
-    }
-    .about-col-label {
-      font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--muted);
-      margin-bottom: 1.1rem; font-weight: 500;
-    }
+  /* ── WORK / CASE STUDIES ── */
+  #work { background: var(--paper); }
+  .cases-list { display: flex; flex-direction: column; gap: 0; }
 
-    /* CASE STUDIES */
-    .case-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; margin-top: 3.5rem;
-    }
-    .case-card {
-      background: white; border: 0.5px solid var(--mid);
-      padding: 2.2rem 2rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .case-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(26,26,46,0.07);
-    }
-    .case-card.featured {
-      grid-column: 1 / -1;
-      background: var(--accent);
-    }
-    .case-label {
-      font-size: 11px; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted);
-      margin-bottom: 1rem;
-    }
-    .case-card.featured .case-label { color: rgba(255,255,255,0.45); }
-    .case-title {
-      font-family: var(--serif);
-      font-size: 1.65rem; font-weight: 600;
-      color: var(--accent); line-height: 1.25; margin-bottom: 1.2rem;
-    }
-    .case-card.featured .case-title { color: white; }
-    .case-body {
-      font-size: 14px; color: var(--muted);
-      line-height: 1.78; margin-bottom: 1.5rem;
-    }
-    .case-card.featured .case-body { color: rgba(255,255,255,0.7); }
-    .case-meta { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.6rem; }
-    .case-meta-row { display: flex; gap: 0.8rem; align-items: flex-start; }
-    .case-meta-key {
-      font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--accent2);
-      font-weight: 500; min-width: 72px; margin-top: 0.05rem; flex-shrink: 0;
-    }
-    .case-card.featured .case-meta-key { color: rgba(255,255,255,0.4); }
-    .case-meta-val { font-size: 13px; color: var(--muted); }
-    .case-card.featured .case-meta-val { color: rgba(255,255,255,0.65); }
-    .case-metrics {
-      display: flex; gap: 2.5rem;
-      padding-top: 1.3rem; border-top: 0.5px solid var(--mid);
-    }
-    .case-card.featured .case-metrics { border-top-color: rgba(255,255,255,0.15); }
-    .case-metric {
-      font-family: var(--serif);
-      font-size: 1.85rem; font-weight: 600;
-      color: var(--accent); line-height: 1;
-    }
-    .case-card.featured .case-metric { color: white; }
-    .case-metric-label {
-      font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--muted); margin-top: 0.25rem;
-    }
-    .case-card.featured .case-metric-label { color: rgba(255,255,255,0.45); }
+  .case-item {
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    background: var(--white);
+  }
+  .case-item:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
 
-    /* SKILLS */
-    .skills-section { background: white; }
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0; margin-top: 3.5rem;
-      border-top: 0.5px solid var(--mid);
-    }
-    .skill-group { padding: 2rem 2.5rem 2rem 0; border-right: 0.5px solid var(--mid); }
-    .skill-group:first-child { padding-left: 0; }
-    .skill-group:nth-child(2) { padding-left: 2.5rem; }
-    .skill-group:last-child { border-right: none; padding-left: 2.5rem; padding-right: 0; }
-    .skill-group-title {
-      font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.14em; color: var(--accent2);
-      font-weight: 500; margin-bottom: 1.2rem;
-    }
-    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-    .skill-list li {
-      font-size: 14px; color: #3a3a42;
-      display: flex; align-items: center; gap: 0.55rem;
-    }
-    .skill-list li::before {
-      content: ''; width: 4px; height: 4px;
-      background: var(--accent2); border-radius: 50%; flex-shrink: 0;
-    }
+  .case-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .case-item.open .case-header { border-bottom-color: var(--border); }
+  .case-num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height: 1;
+    min-width: 3.5rem;
+  }
+  .case-meta { flex: 1; }
+  .case-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .case-tag {
+    padding: 0.2rem 0.75rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .case-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 0.3rem;
+  }
+  .case-company {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .case-toggle {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--border);
+    background: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    color: var(--muted);
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .case-item.open .case-toggle {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
 
-    /* EXPERIENCE */
-    .exp-grid { display: flex; flex-direction: column; margin-top: 3.5rem; }
-    .exp-item {
-      display: grid; grid-template-columns: 200px 1fr;
-      gap: 2.5rem; padding: 2.2rem 0;
-      border-bottom: 0.5px solid var(--mid);
-    }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-date {
-      font-size: 12px; text-transform: uppercase;
-      letter-spacing: 0.07em; color: var(--muted); padding-top: 0.25rem;
-    }
-    .exp-company {
-      font-family: var(--serif);
-      font-size: 1.35rem; font-weight: 600;
-      color: var(--accent); margin-bottom: 0.2rem;
-    }
-    .exp-role {
-      font-size: 11px; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--accent2);
-      font-weight: 500; margin-bottom: 0.9rem;
-    }
-    .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-    .exp-points li {
-      font-size: 14px; color: var(--muted);
-      display: flex; gap: 0.6rem; align-items: flex-start;
-    }
-    .exp-points li::before { content: '—'; color: var(--mid); flex-shrink: 0; }
+  .case-body {
+    display: none;
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+  .case-item.open .case-body { display: grid; grid-template-columns: 1fr 1fr; }
 
-    /* CERTIFICATIONS & EDUCATION */
-    .certs-edu-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; margin-top: 3.5rem;
-    }
-    .cert-item, .edu-item { padding: 0.5rem 0; border-bottom: 0.5px solid var(--mid); margin-bottom: 0.5rem; }
-    .cert-name { font-size: 14px; color: var(--text); margin-bottom: 0.1rem; }
-    .cert-issuer { font-size: 12px; color: var(--muted); }
+  /* For full-width sections inside case body */
+  .case-full {
+    grid-column: 1 / -1;
+  }
 
-    /* CONTACT */
-    #contact { padding-bottom: 7rem; }
-    .contact-inner { text-align: center; max-width: 580px; margin: 0 auto; }
-    .contact-inner .section-label { justify-content: center; }
-    .contact-inner .section-title { font-size: 3.2rem; margin-top: 0.5rem; }
-    .contact-desc { font-size: 15px; color: var(--muted); margin-top: 1rem; line-height: 1.75; }
-    .contact-ctas { display: flex; justify-content: center; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
+  .case-section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .case-section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+  .case-text {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .case-text p { margin-bottom: 0.75rem; }
+  .case-text strong { color: var(--ink); }
 
-    /* FOOTER */
-    footer {
-      border-top: 0.5px solid var(--mid);
-      padding: 2rem 3rem;
-      display: flex; justify-content: space-between;
-      align-items: center;
-    }
-    .footer-name { font-family: var(--serif); font-size: 1rem; color: var(--muted); }
-    .footer-note { font-size: 12px; color: var(--mid); }
+  .case-highlights {
+    grid-column: 1 / -1;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 1.75rem 2rem;
+  }
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .highlight-item {}
+  .highlight-metric {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .highlight-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links a { font-size: 11px; }
-      .container { padding: 0 1.5rem; }
-      section { padding: 4rem 0; }
-      #hero { padding: 5rem 0 4rem; }
-      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-name { font-size: 3rem; }
-      .hero-visual { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .case-grid { grid-template-columns: 1fr; }
-      .case-card.featured { grid-column: 1; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .skill-group { border-right: none; border-bottom: 0.5px solid var(--mid); padding: 1.5rem 0; }
-      .skill-group:last-child { border-bottom: none; }
-      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .certs-edu-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .section-title { font-size: 2.1rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
-    }
-  </style>
+  .copy-sample {
+    grid-column: 1 / -1;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    padding: 1.75rem 2rem;
+  }
+  .copy-sample-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .copy-sample-label::before {
+    content: '';
+    display: block;
+    width: 16px; height: 1px;
+    background: var(--muted);
+  }
+  .copy-headline {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .copy-subhead {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 600px;
+  }
+  .copy-microcopy {
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+  .copy-analysis {
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 0.75rem;
+    line-height: 1.65;
+  }
+  .copy-analysis strong { color: var(--ink); font-style: normal; }
+
+  .page-url {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  .page-url:hover { text-decoration: underline; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--cream); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .skill-card {
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+  }
+  .skill-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-card ul { list-style: none; }
+  .skill-card li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 0.35rem 0;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .skill-card li::before {
+    content: '·';
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--paper); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-period {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 400;
+    padding-top: 0.2rem;
+    line-height: 1.5;
+  }
+  .exp-company {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .exp-role {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding: 0.3rem 0;
+    display: flex; gap: 0.7rem;
+    line-height: 1.6;
+  }
+  .exp-bullets li::before {
+    content: '—';
+    color: var(--border);
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 7rem 4rem;
+  }
+  #contact .section-label { color: var(--accent-light); justify-content: center; }
+  #contact .section-label::before { background: var(--accent-light); }
+  #contact .section-heading { color: var(--paper); }
+  .contact-body {
+    font-size: 1rem;
+    color: rgba(245,240,234,0.6);
+    max-width: 480px;
+    margin: 1rem auto 3rem;
+    line-height: 1.75;
+  }
+  .contact-links {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  }
+  .contact-links a {
+    padding: 0.85rem 2.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .contact-links a.primary {
+    background: var(--accent);
+    color: white;
+    border: 1.5px solid var(--accent);
+  }
+  .contact-links a.primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
+  .contact-links a.secondary {
+    border: 1.5px solid rgba(245,240,234,0.2);
+    color: var(--paper);
+  }
+  .contact-links a.secondary:hover { border-color: var(--paper); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    color: rgba(245,240,234,0.35);
+    font-size: 0.78rem;
+  }
+  footer a { color: rgba(245,240,234,0.35); text-decoration: none; }
+  footer a:hover { color: var(--accent-light); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
+    #hero::before { display: none; }
+    .hero-right { padding-left: 0; border-left: none; border-top: 1px solid var(--border); padding-top: 2rem; flex-direction: row; flex-wrap: wrap; }
+    .hero-stat { flex: 1; min-width: 140px; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .case-item.open .case-body { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    .hero-stat:nth-child(2) { margin-left: 0; }
+  }
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="#hero" class="nav-logo">VS</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Vidushi Srivastava</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <div class="container">
-    <section id="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="hero-eyebrow">Product Marketing · UX Writing</div>
-          <h1 class="hero-name">Vidushi<br>Srivastava</h1>
-          <p class="hero-title">Web Content Strategy · SaaS Products</p>
-          <p class="hero-desc">I turn complex SaaS products into clear, conversion-focused content experiences — from landing pages and UX copy to full website architectures that move users forward.</p>
-          <div class="hero-ctas">
-            <a href="#work" class="btn-primary">View Work</a>
-            <a href="#contact" class="btn-outline">Get in Touch</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="stat-row">
-            <div class="hero-stat-card">
-              <div class="stat-num">1,900+</div>
-              <div class="stat-label">User sessions driven</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="stat-num">15%+</div>
-              <div class="stat-label">Traffic to conversion pages</div>
-            </div>
-          </div>
-          <div class="hero-stat-card">
-            <div class="stat-num" style="font-size:2.1rem;">1m 40s+</div>
-            <div class="stat-label">Avg. engagement time on key product pages</div>
-          </div>
-          <div class="hero-quote">
-            <p>"Turning product complexity into content clarity."</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- ABOUT -->
-  <div class="container">
-    <section id="about">
-      <div class="section-label">About</div>
-      <h2 class="section-title">Content that earns attention.<br>Structure that drives action.</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>I'm a product marketing and content professional focused on SaaS products. My work sits at the intersection of strategy, UX, and storytelling — I build content systems that guide users from discovery to conversion, not just pages that look good.</p>
-          <p>At DigiStay, I scaled the website from a 3-page presence to a structured multi-page product experience, redesigning the messaging hierarchy to shift from feature lists to benefit-driven narratives that map to the user's decision journey.</p>
-          <p>My process is grounded in data: I use Google Analytics and Search Console to understand how content performs, then iterate on structure, copy, and UX flows accordingly.</p>
-        </div>
-        <div>
-          <p class="about-col-label">What I work on</p>
-          <ul class="about-list">
-            <li>SaaS website architecture &amp; content strategy</li>
-            <li>UX copy and product messaging frameworks</li>
-            <li>Landing page design and conversion copywriting</li>
-            <li>SEO content and organic growth systems</li>
-            <li>Data-informed content optimization</li>
-            <li>Brand voice and editorial consistency</li>
-          </ul>
-          <div class="tool-tags">
-            <span class="tag">Figma</span>
-            <span class="tag">Google Analytics</span>
-            <span class="tag">Search Console</span>
-            <span class="tag">SEMrush</span>
-            <span class="tag">ChatGPT</span>
-            <span class="tag">Claude</span>
-            <span class="tag">CMS Platforms</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- CASE STUDIES -->
-  <div class="container">
-    <section id="work">
-      <div class="section-label">Work</div>
-      <h2 class="section-title">Case Studies</h2>
-      <p class="section-sub">Four examples of content strategy in practice — from website transformation to UX copy that converts.</p>
-
-      <div class="case-grid">
-
-        <div class="case-card featured">
-          <div class="case-label">01 — Featured Project</div>
-          <h3 class="case-title">DigiStay.ai: Website Content Transformation</h3>
-          <p class="case-body">Scaled a 3-page website into a fully structured multi-page product experience. Redesigned the messaging architecture from feature-focused to benefit-led, building a content system aligned to the user's decision journey.</p>
-          <div class="case-meta">
-            <div class="case-meta-row">
-              <span class="case-meta-key">Problem</span>
-              <span class="case-meta-val">Website lacked depth and structure. Product value was buried in feature lists, not user outcomes.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Approach</span>
-              <span class="case-meta-val">Mapped user decision stages, built information architecture, rewrote all core pages with benefit-led messaging.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">My Role</span>
-              <span class="case-meta-val">End-to-end — strategy, UX copy, Figma execution, performance monitoring.</span>
-            </div>
-          </div>
-          <div class="case-metrics">
-            <div>
-              <div class="case-metric">1,900+</div>
-              <div class="case-metric-label">User sessions</div>
-            </div>
-            <div>
-              <div class="case-metric">15%+</div>
-              <div class="case-metric-label">Conversion page traffic</div>
-            </div>
-            <div>
-              <div class="case-metric">1m 40s</div>
-              <div class="case-metric-label">Avg. engagement</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-label">02 — Landing Page Optimization</div>
-          <h3 class="case-title">Conversion-Focused Landing Pages</h3>
-          <p class="case-body">Designed and wrote high-intent pages including demo request flows and pricing pages — focused on reducing friction and guiding users toward clear next actions.</p>
-          <div class="case-meta">
-            <div class="case-meta-row">
-              <span class="case-meta-key">Context</span>
-              <span class="case-meta-val">SaaS product with complex features and a multi-stakeholder buyer journey.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Process</span>
-              <span class="case-meta-val">Structured copy hierarchy (headline → proof → CTA), UX microcopy for form fields, benefit-led section flow.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Outcome</span>
-              <span class="case-meta-val">15%+ of overall website traffic consistently reached conversion-focused pages.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-label">03 — SEO Content Strategy</div>
-          <h3 class="case-title">Organic Growth Through Structured Content</h3>
-          <p class="case-body">Built and executed SEO content strategies across multiple brands — combining keyword research with quality editorial to improve organic visibility and sustainable traffic growth.</p>
-          <div class="case-meta">
-            <div class="case-meta-row">
-              <span class="case-meta-key">Context</span>
-              <span class="case-meta-val">Pearl Organisation required improved search rankings for competitive industry keywords.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Process</span>
-              <span class="case-meta-val">Keyword research, on-page SEO implementation, topic clustering, editorial calendar management.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Outcome</span>
-              <span class="case-meta-val">Consistent organic content output targeting high-value keywords with measurable engagement uplift.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-label">04 — Product Messaging & UX Writing</div>
-          <h3 class="case-title">UX Copy Across Product Flows</h3>
-          <p class="case-body">Wrote microcopy, UI labels, empty states, and onboarding flows for SaaS product features — translating technical functionality into language users actually understand.</p>
-          <div class="case-meta">
-            <div class="case-meta-row">
-              <span class="case-meta-key">Context</span>
-              <span class="case-meta-val">DigiStay product features: digital check-in, booking engine, and channel manager.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Process</span>
-              <span class="case-meta-val">Collaborated on Figma flows, wrote UI copy, built a consistent product voice across all user touchpoints.</span>
-            </div>
-            <div class="case-meta-row">
-              <span class="case-meta-key">Outcome</span>
-              <span class="case-meta-val">Cohesive user experience with 1m 40s+ average engagement time on product pages.</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SKILLS -->
-  <div class="skills-section">
-    <div class="container">
-      <section id="skills">
-        <div class="section-label">Skills</div>
-        <h2 class="section-title">What I bring to a product team</h2>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <div class="skill-group-title">Content &amp; Strategy</div>
-            <ul class="skill-list">
-              <li>Content strategy &amp; architecture</li>
-              <li>Copywriting &amp; brand voice</li>
-              <li>SEO writing &amp; keyword research</li>
-              <li>Landing page copy</li>
-              <li>Product messaging frameworks</li>
-              <li>Editorial calendar management</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Product &amp; UX</div>
-            <ul class="skill-list">
-              <li>UX writing &amp; microcopy</li>
-              <li>Conversion copywriting</li>
-              <li>Information architecture</li>
-              <li>User flow mapping</li>
-              <li>Benefit-led messaging</li>
-              <li>Figma (design collaboration)</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-title">Analytics &amp; Tools</div>
-            <ul class="skill-list">
-              <li>Google Analytics 4</li>
-              <li>Google Search Console</li>
-              <li>SEMrush (keyword &amp; audit)</li>
-              <li>CMS platforms</li>
-              <li>AI-assisted content production</li>
-              <li>Prompt engineering</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Product Marketing · UX Writing</div>
+    <h1 class="hero-title">Vidushi<br><em>Srivastava</em></h1>
+    <p class="hero-subtitle">Web Content Strategy · SaaS Products</p>
+    <p class="hero-body">
+      I turn complex SaaS products into clear, conversion-focused content experiences — from landing pages and UX copy to full website architectures that move users forward.
+    </p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn-primary">View Case Studies</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
   </div>
-
-  <div class="divider"></div>
-
-  <!-- EXPERIENCE -->
-  <div class="container">
-    <section id="experience">
-      <div class="section-label">Experience</div>
-      <h2 class="section-title">Where I've worked</h2>
-      <div class="exp-grid">
-
-        <div class="exp-item">
-          <div class="exp-date">Sept 2025 – Present</div>
-          <div>
-            <div class="exp-company">DigiStay.ai</div>
-            <div class="exp-role">Product Marketing, UX Copy &amp; Web Experience</div>
-            <ul class="exp-points">
-              <li>Built and scaled website from 3 core pages to a structured multi-page product experience</li>
-              <li>Designed high-intent demo and pricing flows; drove 15%+ traffic to conversion pages</li>
-              <li>Achieved 1m 40s+ average engagement time on key product pages through strategic UX copy</li>
-              <li>Led end-to-end execution using Figma and AI tools; monitored performance via Google Analytics</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-date">Feb – May 2025</div>
-          <div>
-            <div class="exp-company">Glassfrog Technologies</div>
-            <div class="exp-role">Content Manager</div>
-            <ul class="exp-points">
-              <li>Led content planning and execution across digital platforms to grow audience engagement</li>
-              <li>Developed content strategies aligned with brand goals and managed editorial calendars</li>
-              <li>Maintained consistent brand voice across all communication channels</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-date">Apr – Sept 2024</div>
-          <div>
-            <div class="exp-company">HAN Digital Solutions</div>
-            <div class="exp-role">Prompt Engineer (Contract)</div>
-            <ul class="exp-points">
-              <li>Improved AI-generated content quality through structured prompt optimization</li>
-              <li>Supported scalable content production using AI-assisted writing workflows</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div class="exp-date">Nov 2022 – Dec 2023</div>
-          <div>
-            <div class="exp-company">Pearl Organisation</div>
-            <div class="exp-role">SEO Content Creator</div>
-            <ul class="exp-points">
-              <li>Created SEO-optimized blogs and website content targeting high-value keywords</li>
-              <li>Conducted keyword research and implemented on-page SEO strategies</li>
-              <li>Produced social media content to support brand engagement</li>
-              <li>Recognized as Employee of the Month (Sept 2023) and Pillar of Success (Feb 2023)</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Certifications & Education -->
-      <div class="certs-edu-grid" style="margin-top:4rem;">
-        <div>
-          <div class="section-label" style="margin-bottom:1.5rem;">Certifications</div>
-          <div class="cert-item">
-            <div class="cert-name">Content Marketing Principles for Businesses</div>
-            <div class="cert-issuer">Semrush</div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-name">Basics of Content Marketing</div>
-            <div class="cert-issuer">Great Learning Academy</div>
-          </div>
-          <div class="cert-item">
-            <div class="cert-name">Introduction to Generative Engine Optimisation (GEO)</div>
-            <div class="cert-issuer">Independent</div>
-          </div>
-        </div>
-        <div>
-          <div class="section-label" style="margin-bottom:1.5rem;">Education</div>
-          <div class="edu-item">
-            <div class="cert-name">Master's in Journalism &amp; Mass Communication</div>
-            <div class="cert-issuer">IGNOU</div>
-          </div>
-          <div class="edu-item">
-            <div class="cert-name">Bachelor's in Journalism &amp; Mass Communication</div>
-            <div class="cert-issuer">IMS Unison University</div>
-          </div>
-        </div>
-      </div>
-
-    </section>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="stat-num">1,900+</div>
+      <div class="stat-label">User sessions driven through structured content & UX</div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">15%+</div>
+      <div class="stat-label">Total traffic reaching conversion-focused pages</div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">1m 40s+</div>
+      <div class="stat-label">Average engagement time on key product pages</div>
+    </div>
+    <div class="hero-quote">
+      "Turning product complexity into content clarity."
+    </div>
   </div>
+</section>
 
-  <div class="divider"></div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div>
+      <h2 class="section-heading">Content that earns<br>attention. Structure<br>that drives action.</h2>
+      <div class="about-body">
+        <p>I'm a product marketing and content professional focused on SaaS products. My work sits at the intersection of <strong>strategy, UX, and storytelling</strong> — I build content systems that guide users from discovery to conversion, not just pages that look good.</p>
+        <p>At <strong>DigiStay.ai</strong>, I scaled the website from a 3-page presence to a structured multi-page product experience, redesigning the messaging hierarchy to shift from feature lists to benefit-driven narratives that map to the user's decision journey.</p>
+        <p>My process is grounded in data: I use <strong>Google Analytics</strong> and <strong>Search Console</strong> to understand how content performs, then iterate on structure, copy, and UX flows accordingly.</p>
+        <p>Before DigiStay, I've worked across content management, prompt engineering, and SEO content creation — building a broad foundation that I bring to every new product challenge.</p>
+      </div>
+      <div class="tools-grid">
+        <span class="tool-tag">Figma</span>
+        <span class="tool-tag">Google Analytics</span>
+        <span class="tool-tag">Search Console</span>
+        <span class="tool-tag">SEMrush</span>
+        <span class="tool-tag">Claude</span>
+        <span class="tool-tag">ChatGPT</span>
+        <span class="tool-tag">CMS Platforms</span>
+      </div>
+    </div>
+    <div class="about-aside">
+      <div class="aside-card">
+        <h4>Content & Strategy</h4>
+        <ul>
+          <li>SaaS website architecture</li>
+          <li>Content strategy & planning</li>
+          <li>Copywriting & brand voice</li>
+          <li>SEO writing & keyword research</li>
+          <li>Landing page copy</li>
+          <li>Product messaging frameworks</li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h4>Product & UX Writing</h4>
+        <ul>
+          <li>UX writing & microcopy</li>
+          <li>Conversion copywriting</li>
+          <li>Information architecture</li>
+          <li>User flow mapping</li>
+          <li>Benefit-led messaging</li>
+          <li>Figma collaboration</li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h4>Certifications</h4>
+        <ul>
+          <li>Content Marketing Principles — Semrush</li>
+          <li>Basics of Content Marketing — Great Learning</li>
+          <li>Introduction to GEO — Independent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <div class="container">
-    <section id="contact">
-      <div class="contact-inner">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Let's build something worth reading.</h2>
-        <p class="contact-desc">Open to product marketing, UX writing, and web content strategy roles in SaaS. Currently based in Dehradun — available remotely.</p>
-        <div class="contact-ctas">
-          <a href="mailto:vidushi25srivastava@gmail.com" class="btn-primary">Email me</a>
-          <a href="https://linkedin.com/in/vidushi-srivastava06" class="btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+<!-- WORK -->
+<section id="work">
+  <div class="section-label">Work</div>
+  <h2 class="section-heading">Case Studies</h2>
+  <p class="section-intro">Five detailed samples drawn from real work at DigiStay.ai — showing the strategy, copy decisions, and measurable outcomes behind each piece of content.</p>
+
+  <div class="cases-list">
+
+    <!-- CASE 1: Website Transformation -->
+    <div class="case-item open" id="case1">
+      <div class="case-header" onclick="toggleCase('case1')">
+        <div class="case-num">01</div>
+        <div class="case-meta">
+          <div class="case-tags">
+            <span class="case-tag">Content Strategy</span>
+            <span class="case-tag">Information Architecture</span>
+            <span class="case-tag">UX Copy</span>
+            <span class="case-tag">Featured</span>
+          </div>
+          <div class="case-title">Website Content Transformation — 3 Pages to Full Product Ecosystem</div>
+          <div class="case-company">DigiStay.ai · Sept 2025 – Present</div>
+        </div>
+        <button class="case-toggle" aria-label="Toggle">−</button>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-section-label">The Problem</div>
+          <div class="case-text">
+            <p>DigiStay launched with a minimal 3-page website that couldn't communicate the full scope of its AI-powered hotel management platform. Product value was buried in feature lists rather than user outcomes, and the site lacked the depth and structure needed to support a multi-stakeholder buyer journey — from independent hotel owners to enterprise resort chains.</p>
+            <p>There was no content system, no consistent messaging hierarchy, and no pages to support the product's expanding feature set — including digital check-in, channel manager, booking engine, and AI tools.</p>
+          </div>
+        </div>
+        <div>
+          <div class="case-section-label">My Role & Approach</div>
+          <div class="case-text">
+            <p><strong>End-to-end ownership:</strong> content strategy, UX copy, information architecture, Figma execution, and performance monitoring.</p>
+            <p>I began by mapping the user decision journey — understanding what different buyer segments (boutique owners, resort managers, chain operators) needed to see at each stage of evaluation. From this, I built a multi-page content architecture covering all core product features with consistent messaging across every page.</p>
+            <p>The central strategic shift was from <strong>feature-focused to benefit-led communication</strong> — every section was reframed around what the product does for the hotelier, not just what it does.</p>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="case-highlights">
+            <div class="case-section-label">Outcomes & Impact</div>
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-metric">3 → 10+</div>
+                <div class="highlight-desc">Pages built, each structured around a distinct user intent</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-metric">1,900+</div>
+                <div class="highlight-desc">Total user sessions driven by structured content and UX improvements</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-metric">15%+</div>
+                <div class="highlight-desc">Of all traffic consistently reached conversion-focused pages (demo & pricing)</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-metric">1m 40s+</div>
+                <div class="highlight-desc">Average engagement time on key product pages — well above SaaS benchmarks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Homepage Hero</div>
+            <div class="copy-headline">The AI Operating System for Modern Hospitality</div>
+            <div class="copy-subhead">DigiStay runs on AI agents to manage operations, guest experience, and revenue — so you don't have to. Your AI Copilot doesn't just assist, it runs your hotel.</div>
+            <div class="copy-analysis"><strong>Why this works:</strong> The headline positions the product categorically ("Operating System") rather than as a point solution. The subhead neutralises a common objection — "AI assists, not replaces" — by flipping the expectation entirely. "So you don't have to" is a relief statement, not a tech claim. The second line ("doesn't just assist, it runs your hotel") escalates the promise without overselling.</div>
+            <a href="https://digistay.ai" class="page-url" target="_blank">↗ View live page: digistay.ai</a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- CASE 2: Digital Check-In Page -->
+    <div class="case-item" id="case2">
+      <div class="case-header" onclick="toggleCase('case2')">
+        <div class="case-num">02</div>
+        <div class="case-meta">
+          <div class="case-tags">
+            <span class="case-tag">Product Page Copy</span>
+            <span class="case-tag">UX Writing</span>
+            <span class="case-tag">Conversion Copywriting</span>
+          </div>
+          <div class="case-title">Digital Check-In Product Page — From Feature List to Guest-First Narrative</div>
+          <div class="case-company">DigiStay.ai · Hotel Digital Check-In Solution</div>
+        </div>
+        <button class="case-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-section-label">Context & Objective</div>
+          <div class="case-text">
+            <p>The Digital Check-In page needed to speak to two distinct audiences simultaneously: <strong>hotel owners</strong> evaluating an operational tool, and <strong>hotel guests</strong> experiencing a new arrival process. Both needed to feel confident and reassured — but with very different concerns.</p>
+            <p>The page objective was to demonstrate that DigiStay's check-in software reduces operational burden for staff while creating a premium, frictionless experience for guests — and to drive demo bookings from property owners.</p>
+          </div>
+        </div>
+        <div>
+          <div class="case-section-label">Content Structure & Decisions</div>
+          <div class="case-text">
+            <p>I structured the page around three content arcs: <strong>(1) guest benefit</strong> (what guests feel), <strong>(2) operational benefit</strong> (what staff experience), and <strong>(3) technical trust</strong> (security and compliance assurance).</p>
+            <p>The UX copy for the step-by-step process (Select nationality → Upload ID → Enter details → Pay → Check-in) was written to feel as simple and linear as possible — eliminating jargon at every step.</p>
+            <p>A "Web Check-In" section was added to handle the pre-arrival flow, using structured parallel copy to walk through the process for both the guest and the hotel.</p>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Hero Headline & Subhead</div>
+            <div class="copy-headline">Turn Waiting into Welcome with Digital Check-In</div>
+            <div class="copy-subhead">Skip the queue with DigiStay's AI-powered digital check-in. Reduce waiting time by 70% and offer a seamless, contactless arrival experience. The top hotel check-in software lets guests have a calm, seamless, and stress-free arrival.</div>
+            <div class="copy-analysis"><strong>Why this works:</strong> "Turn Waiting into Welcome" is a benefit contrast (negative state → positive outcome) compressed into 5 words. The 70% metric anchors the promise in a specific, credible number. "Calm, seamless, stress-free" targets the emotional state of the guest — not the features of the software. The word "calm" is deliberate: hotels selling luxury sell feelings, not tools.</div>
+            <a href="https://digistay.ai/hotel-digital-check-in" class="page-url" target="_blank">↗ View live page</a>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Benefits Section (UX Microcopy)</div>
+            <div class="copy-headline">Check-In Smarter: Benefits for Hotels and Guests</div>
+            <div class="copy-subhead">Turn hectic check-ins into effortless first impressions.</div>
+            <div class="copy-analysis"><strong>Copy decisions:</strong> Each benefit point uses a rhythm of impact word + explanation: "Speedy Check-Ins – Reduce guest waiting time from minutes to seconds." The dual-audience structure (hotels + guests) is maintained throughout without creating two separate sections — a deliberate IA choice to keep page flow intact. The AI security section ("All IDs are stored securely for up to 5 years") is written to build legal confidence, not just feature coverage.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3: Channel Manager Page -->
+    <div class="case-item" id="case3">
+      <div class="case-header" onclick="toggleCase('case3')">
+        <div class="case-num">03</div>
+        <div class="case-meta">
+          <div class="case-tags">
+            <span class="case-tag">Landing Page</span>
+            <span class="case-tag">SEO Copywriting</span>
+            <span class="case-tag">Content Strategy</span>
+          </div>
+          <div class="case-title">Channel Manager Landing Page — SEO + Conversion Hybrid</div>
+          <div class="case-company">DigiStay.ai · Channel Manager Solution</div>
+        </div>
+        <button class="case-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-section-label">Context & Objective</div>
+          <div class="case-text">
+            <p>The Channel Manager page had a dual mandate: perform organically for competitive hotel tech keywords while converting hotelier visitors into demo bookings. This required balancing SEO depth (long-form educational content) with sharp conversion copy and a clear CTA structure.</p>
+            <p>The target audience was hotel owners and revenue managers who may already know what a channel manager is — the copy couldn't over-explain basics, but needed to clearly differentiate DigiStay from established competitors.</p>
+          </div>
+        </div>
+        <div>
+          <div class="case-section-label">Strategy & Copy Decisions</div>
+          <div class="case-text">
+            <p>The page was structured as a <strong>problem-solution-proof</strong> flow: start with the pain (overbookings, manual updates, revenue loss), introduce the solution (real-time sync, dynamic pricing), then validate with social proof and pricing clarity.</p>
+            <p>An educational "What is a Channel Manager?" section was included for SEO depth, but written in plain language — avoiding the jargon-heavy tone typical of hotel tech companies. This also served to build trust with less digitally-sophisticated buyers.</p>
+            <p>Dynamic pricing content was given dedicated real estate, with a data visualisation element ("+24% Revenue This month") to create an aspirational reference point.</p>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Hero</div>
+            <div class="copy-headline">Stop Losing Bookings. Meet Your Hotel Channel Manager.</div>
+            <div class="copy-subhead">One Simple Solution to Manage All Your Booking Websites. Thousands of hotels trust DigiStay to prevent overbookings, optimize rates, and maximize revenue — all in a few simple steps.</div>
+            <div class="copy-analysis"><strong>Why this works:</strong> The hero opens with a loss-aversion hook ("Stop Losing") — one of the highest-converting frames for B2B SaaS. The period after the first sentence creates a dramatic pause before the product name. "One Simple Solution" counters the complexity fear that hotel owners have toward tech tools. The social proof ("Thousands of hotels trust") is embedded in the hero, not relegated to a lower section — building confidence early in the scroll journey.</div>
+            <a href="https://digistay.ai/channel-manager" class="page-url" target="_blank">↗ View live page</a>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Feature Section (Benefit-Led)</div>
+            <div class="copy-headline">Why Do You Need a Channel Manager?</div>
+            <div class="copy-subhead">Managing multiple hotel booking channels can be overwhelming and prone to errors. A channel manager helps hotels stay organised by preventing overbookings, automatically updating rates, and maintaining consistent pricing across platforms.</div>
+            <div class="copy-analysis"><strong>Copy decisions:</strong> Each feature is written as a micro benefit statement: "Prevent overbookings across OTAs — Automatic inventory sync prevents double bookings & protects your reputation." The "& protects your reputation" tail is strategic — it connects a technical feature to a business identity concern (reputation), which resonates more strongly with independent hotel owners than operational metrics alone.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 4: Booking Engine Page -->
+    <div class="case-item" id="case4">
+      <div class="case-header" onclick="toggleCase('case4')">
+        <div class="case-num">04</div>
+        <div class="case-meta">
+          <div class="case-tags">
+            <span class="case-tag">Conversion Copywriting</span>
+            <span class="case-tag">Landing Page</span>
+            <span class="case-tag">Messaging Strategy</span>
+          </div>
+          <div class="case-title">Booking Engine Page — Reframing the Direct Booking Argument</div>
+          <div class="case-company">DigiStay.ai · Hotel Booking Engine Solution</div>
+        </div>
+        <button class="case-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-section-label">Context & Objective</div>
+          <div class="case-text">
+            <p>Most Indian hotels are deeply reliant on OTA platforms like MakeMyTrip and Booking.com, often paying 15–20% commissions per booking. The Booking Engine page needed to convince skeptical, OTA-dependent hoteliers that switching to direct bookings was not just possible, but financially urgent.</p>
+            <p>The challenge was overcoming both inertia ("It's working for us now") and fear ("What if direct bookings don't come?"). The copy had to be financially persuasive, not just feature-descriptive.</p>
+          </div>
+        </div>
+        <div>
+          <div class="case-section-label">Messaging Strategy</div>
+          <div class="case-text">
+            <p>I built the page around a <strong>financial loss framing</strong>: every booking through an OTA is money leaving the business. This reframed the product purchase as a cost-saving decision, not a tech adoption decision — lowering psychological friction.</p>
+            <p>An "OTA vs DigiStay" comparison section was created to visualize the contrast directly. Data points like "20% commission saved per booking" and "97% payment success rate" were placed near CTAs to reinforce trust at the moment of decision.</p>
+            <p>The "One Change. Immediate Impact." section was written as an urgency device — quantifying the cost of delay rather than just listing benefits.</p>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Hero</div>
+            <div class="copy-headline">Stop Losing On Commissions — Get More Direct Bookings With Our Hotel Booking Engine</div>
+            <div class="copy-subhead">DigiStay's hotel booking engine powers direct bookings for every kind of property — from hotels and resorts to homestays, hostels, and villas. Give your guests a secure, seamless, and branded booking experience, no matter where they stay.</div>
+            <div class="copy-analysis"><strong>Why this works:</strong> "Stop Losing" is a deliberate loss-aversion frame — stronger than "Start Earning More." The em-dash mid-headline creates a cause-effect relationship: lose commissions → gain direct bookings. The subhead expands scope immediately ("every kind of property") to prevent self-exclusion by smaller property types. "Branded booking experience" subtly addresses OTA brand-washing — a real pain point for hospitality businesses trying to build guest loyalty.</div>
+            <a href="https://digistay.ai/hotel-booking-engine" class="page-url" target="_blank">↗ View live page</a>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Pain Point Section</div>
+            <div class="copy-headline">Challenges Hotels Face Without a Booking Engine</div>
+            <div class="copy-subhead">Up to 20% commission is gone per booking. Limited brand visibility — guests remember the OTA, not your property. Payment delays hamper cash flow.</div>
+            <div class="copy-analysis"><strong>Copy decisions:</strong> This section deliberately names the pain without softening it — "commission is gone" (not "fees apply"), "guests remember the OTA, not your property" (an identity and brand threat, not just a revenue metric). Each pain point ends with a business consequence, not just an operational description. This structure mirrors the "problem agitation" technique — making the reader feel the cost of inaction before introducing the solution.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 5: Pricing Page & AI Homepage Copy -->
+    <div class="case-item" id="case5">
+      <div class="case-header" onclick="toggleCase('case5')">
+        <div class="case-num">05</div>
+        <div class="case-meta">
+          <div class="case-tags">
+            <span class="case-tag">UX Writing</span>
+            <span class="case-tag">Product Messaging</span>
+            <span class="case-tag">Pricing Page Copy</span>
+          </div>
+          <div class="case-title">AI Product Messaging & Pricing Architecture</div>
+          <div class="case-company">DigiStay.ai · Homepage AI Section + Pricing Page</div>
+        </div>
+        <button class="case-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-section-label">Context & Objective</div>
+          <div class="case-text">
+            <p>As DigiStay evolved into a full AI platform (AI Copilot, AI Receptionist, AI Revenue Manager), the core homepage messaging needed to reflect this shift without alienating non-technical hoteliers who associate "AI" with complexity and job replacement.</p>
+            <p>Simultaneously, the pricing page needed to clearly segment four buyer tiers — from independent stays to enterprise groups — with tier names and feature lists that would make self-selection easy and frictionless.</p>
+          </div>
+        </div>
+        <div>
+          <div class="case-section-label">Copy Strategy</div>
+          <div class="case-text">
+            <p>For the AI section, I wrote each AI product with a distinct role identity: <strong>Copilot</strong> (operations), <strong>Receptionist</strong> (guest communication), <strong>Revenue Manager</strong> (pricing). This gave non-technical buyers a human frame of reference — these are roles they already understand, now automated.</p>
+            <p>The section header — "Meet the AI That Runs Your Hotel" — uses second-person ownership language. "Your hotel" makes the AI feel personally useful rather than generic.</p>
+            <p>For the pricing page, tier names were selected to map to buyer identity: "For Independent Stays," "For Growing Hotels, Chains," "For Groups, Premium Properties," "For Multiple Properties." Each label is a mirror, not a marketing claim.</p>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — AI Section (Homepage)</div>
+            <div class="copy-headline">Everything Your Hotel Needs, Automated by AI</div>
+            <div class="copy-subhead">Traditional hotel software gives you tools. DigiStay gives you intelligence. At the core of DigiStay is a powerful AI layer that manages your entire hospitality ecosystem — from operations to revenue to guest experience.</div>
+            <div class="copy-analysis"><strong>Why this works:</strong> The contrast sentence ("tools vs intelligence") is a classic positioning frame that repositions all competitors as feature-sets rather than solutions. "Ecosystem" elevates scope — this isn't a point tool, it's an operating layer. The three pillars (operations, revenue, guest experience) in the final sentence mirror a hotelier's three core performance areas, making the claim feel complete and comprehensive without listing every feature.</div>
+            <a href="https://digistay.ai" class="page-url" target="_blank">↗ View live page</a>
+          </div>
+        </div>
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Copy Sample — Pricing Tier Labels & Architecture</div>
+            <div class="copy-headline">Plans That Fit Every Hotel</div>
+            <div class="copy-subhead">Flexible pricing for hotels of all sizes. Starting at just ₹1000/month — choose the plan that fits your hotel.</div>
+            <div class="copy-analysis"><strong>Copy decisions:</strong> Tier subtitles ("For Independent Stays," "For Growing Hotels, Chains") use the buyer's self-description — not abstract tier language like "Starter" or "Pro." The pricing anchor ("Starting at just ₹1000/month") appears on product pages before users reach the pricing page, reducing sticker shock at the decision stage. The enterprise tier uses "Contact Sales" with specific enterprise features listed to set expectations and qualify leads without blocking exploration.</div>
+            <a href="https://digistay.ai/pricing" class="page-url" target="_blank">↗ View live page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <div class="divider"></div>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2 class="section-heading">What I bring to<br>a product team</h2>
+  <p class="section-intro">A toolkit built across content strategy, UX writing, and data-informed optimization — grounded in real SaaS product experience.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>Content & Strategy</h4>
+      <ul>
+        <li>Content strategy & architecture</li>
+        <li>Copywriting & brand voice</li>
+        <li>SEO writing & keyword research</li>
+        <li>Landing page copy</li>
+        <li>Product messaging frameworks</li>
+        <li>Editorial calendar management</li>
+        <li>Benefit-led messaging systems</li>
+        <li>Topic clustering & content planning</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h4>Product & UX Writing</h4>
+      <ul>
+        <li>UX writing & microcopy</li>
+        <li>Conversion copywriting</li>
+        <li>Information architecture</li>
+        <li>User flow mapping</li>
+        <li>UI labels & empty states</li>
+        <li>Onboarding flow copy</li>
+        <li>CTA writing & optimisation</li>
+        <li>Figma design collaboration</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h4>Analytics & Tools</h4>
+      <ul>
+        <li>Google Analytics 4</li>
+        <li>Google Search Console</li>
+        <li>SEMrush (keyword & audit)</li>
+        <li>CMS platforms</li>
+        <li>AI-assisted content production</li>
+        <li>Prompt engineering</li>
+        <li>Figma</li>
+        <li>Performance-based iteration</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <span class="footer-name">Vidushi Srivastava</span>
-    <span class="footer-note">Product Marketing · UX Writing · Web Content Strategy</span>
-  </footer>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-heading">Where I've worked</h2>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-period">Sept 2025 – Present</div>
+      <div>
+        <div class="exp-company">DigiStay.ai</div>
+        <div class="exp-role">Product Marketing, UX Copy & Web Experience</div>
+        <ul class="exp-bullets">
+          <li>Built and scaled website from 3 core pages to a structured multi-page product experience covering digital check-in, booking engine, channel manager, and guest experience</li>
+          <li>Redesigned messaging hierarchy across all solution pages — shifting from feature-focused to benefit-led communication aligned with the user decision journey</li>
+          <li>Designed high-intent demo and pricing flows; drove 15%+ traffic to conversion pages</li>
+          <li>Achieved 1m 40s+ average engagement time on key product pages through strategic UX copy</li>
+          <li>Led end-to-end execution using Figma and AI tools; monitored performance via Google Analytics and Search Console</li>
+          <li>Drove 1,900+ user sessions through structured content and UX improvements</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-period">Feb 2025 – May 2025</div>
+      <div>
+        <div class="exp-company">Glassfrog Technologies</div>
+        <div class="exp-role">Content Manager</div>
+        <ul class="exp-bullets">
+          <li>Led content planning and execution across digital platforms to grow audience engagement and website traffic</li>
+          <li>Developed content strategies aligned with brand goals, maintaining consistent voice across all channels</li>
+          <li>Managed editorial calendars, publishing workflows, and cross-team content coordination</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-period">Apr 2024 – Sept 2024</div>
+      <div>
+        <div class="exp-company">HAN Digital Solutions</div>
+        <div class="exp-role">Prompt Engineer (Contract)</div>
+        <ul class="exp-bullets">
+          <li>Improved AI-generated content quality through structured prompt optimization focused on clarity, tone, and contextual accuracy</li>
+          <li>Supported scalable content production using AI-assisted writing tools and structured workflows</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-period">Nov 2022 – Dec 2023</div>
+      <div>
+        <div class="exp-company">Pearl Organisation</div>
+        <div class="exp-role">SEO Content Creator</div>
+        <ul class="exp-bullets">
+          <li>Created SEO-optimized blogs and website content targeting high-value keywords for improved organic visibility</li>
+          <li>Conducted keyword research and implemented on-page SEO strategies across content assets</li>
+          <li>Produced social media content including captions and digital creatives to support brand engagement</li>
+          <li>Recognised as Employee of the Month (Sept 2023) and Pillar of Success (Feb 2023)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-heading">Let's build something<br><em style="font-style:italic; color:var(--accent-light)">worth reading.</em></h2>
+  <p class="contact-body">Open to product marketing, UX writing, and web content strategy roles in SaaS. Currently based in Dehradun — available remotely.</p>
+  <div class="contact-links">
+    <a href="mailto:vidushi25srivastava@gmail.com" class="primary">Email me</a>
+    <a href="https://linkedin.com/in/vidushi-srivastava06" target="_blank" class="secondary">LinkedIn →</a>
+  </div>
+</section>
+
+<footer>
+  <span>Vidushi Srivastava — Product Marketing · UX Writing · Web Content Strategy</span>
+  <span>© 2026</span>
+</footer>
+
+<script>
+function toggleCase(id) {
+  const item = document.getElementById(id);
+  const toggle = item.querySelector('.case-toggle');
+  const isOpen = item.classList.contains('open');
+  
+  // Close all
+  document.querySelectorAll('.case-item').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.case-toggle').textContent = '+';
+  });
+  
+  // Open this one if it was closed
+  if (!isOpen) {
+    item.classList.add('open');
+    toggle.textContent = '−';
+  }
+}
+</script>
 </body>
 </html>
