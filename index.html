@@ -615,6 +615,149 @@
   footer a { color: rgba(245,240,234,0.35); text-decoration: none; }
   footer a:hover { color: var(--accent-light); }
 
+  /* ── BRAND BOOK CASE STUDY EXTRAS ── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .pillar-card {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+  }
+  .pillar-card .pillar-name {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .pillar-card .pillar-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .tone-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .tone-card {
+    padding: 1rem 1.25rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+  }
+  .tone-channel {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+  }
+  .tone-style {
+    font-family: 'Fraunces', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .tone-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .do-col, .dont-col {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+  }
+  .do-col { border-top: 3px solid #16a34a; }
+  .dont-col { border-top: 3px solid #dc2626; }
+  .do-col h5, .dont-col h5 {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .do-col h5 { color: #16a34a; }
+  .dont-col h5 { color: #dc2626; }
+  .do-col li, .dont-col li {
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+    list-style: none;
+    display: flex; gap: 0.5rem;
+  }
+  .do-col li:last-child, .dont-col li:last-child { border-bottom: none; }
+  .do-col li::before { content: '✓'; color: #16a34a; flex-shrink: 0; font-weight: 700; }
+  .dont-col li::before { content: '✕'; color: #dc2626; flex-shrink: 0; font-weight: 700; }
+
+  .color-swatches {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem;
+  }
+  .swatch {
+    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  }
+  .swatch-block {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+  }
+  .swatch-hex {
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-family: monospace;
+  }
+  .swatch-name {
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-align: center;
+    max-width: 52px;
+    line-height: 1.3;
+  }
+
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .deliverable-item {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+    text-align: center;
+  }
+  .deliverable-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .deliverable-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .deliverable-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
@@ -626,6 +769,10 @@
     section { padding: 4rem 1.5rem; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .case-item.open .case-body { grid-template-columns: 1fr; }
+    .pillar-grid { grid-template-columns: 1fr; }
+    .tone-row { grid-template-columns: 1fr; }
+    .do-dont { grid-template-columns: 1fr; }
+    .deliverables-grid { grid-template-columns: 1fr 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
@@ -1014,6 +1161,276 @@
             <a href="https://digistay.ai/pricing" class="page-url" target="_blank">↗ View live page</a>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- CASE 6: Brand Book -->
+    <div class="case-item" id="case6">
+      <div class="case-header" onclick="toggleCase('case6')">
+        <div class="case-num">06</div>
+        <div class="case-meta">
+          <div class="case-tags">
+            <span class="case-tag">Brand Strategy</span>
+            <span class="case-tag">Content Systems</span>
+            <span class="case-tag">UX Writing Principles</span>
+            <span class="case-tag">Voice & Tone</span>
+          </div>
+          <div class="case-title">DigiStay Brand & Content System — Building the Language of an AI Hotel Platform</div>
+          <div class="case-company">DigiStay.ai · Brand Book v2 · 2025</div>
+        </div>
+        <button class="case-toggle" aria-label="Toggle">+</button>
+      </div>
+      <div class="case-body">
+
+        <!-- Overview -->
+        <div class="case-full">
+          <div class="case-section-label">Overview</div>
+          <div class="case-text">
+            <p>DigiStay is an AI-powered hotel management SaaS platform serving 1–3 star hotels, homestays, resorts, villas, and camps across India, UAE, and Southeast Asia. As the product expanded — adding AI Copilot, AI Receptionist, channel manager, booking engine, and digital check-in — its communication became fragmented across product UI, marketing, website, social, and customer touchpoints.</p>
+            <p>I authored the complete DigiStay Brand Book v2: a content and brand system that unified voice, tone, messaging, visual direction, and UX writing principles across every channel the product touches.</p>
+          </div>
+        </div>
+
+        <!-- Problem -->
+        <div>
+          <div class="case-section-label">The Problem</div>
+          <div class="case-text">
+            <p>A fast-growing SaaS product without a documented brand system creates compounding inconsistency. At DigiStay, this showed up as:</p>
+            <p><strong>Messaging drift</strong> — different pages described the same features with different language, undermining trust. <strong>Audience mismatch</strong> — some copy spoke to tech-savvy buyers, while the actual audience was independent hotel operators with limited digital exposure. <strong>Channel confusion</strong> — the same tone was being used for WhatsApp messages, LinkedIn posts, and product UI labels, none of which serve the same user need. <strong>No scalability</strong> — every new piece of content required decisions from scratch, with no shared reference.</p>
+          </div>
+        </div>
+
+        <!-- Goal -->
+        <div>
+          <div class="case-section-label">Goal</div>
+          <div class="case-text">
+            <p>Create a single source of truth for how DigiStay communicates — covering brand identity, messaging strategy, tone of voice, UX writing principles, visual direction, and channel-specific guidelines — that any team member or agency could use to produce on-brand content independently.</p>
+            <p>The deliverable needed to be <strong>practical, not aspirational</strong>: specific enough to guide microcopy decisions in a product UI, broad enough to inform a campaign social post.</p>
+          </div>
+        </div>
+
+        <!-- My Role -->
+        <div class="case-full">
+          <div class="case-section-label">My Role</div>
+          <div class="deliverables-grid">
+            <div class="deliverable-item">
+              <span class="deliverable-icon">🏗</span>
+              <div class="deliverable-name">Content Strategy</div>
+              <div class="deliverable-desc">Defined the overall system architecture and what the brand book needed to cover</div>
+            </div>
+            <div class="deliverable-item">
+              <span class="deliverable-icon">✍️</span>
+              <div class="deliverable-name">Brand Writing</div>
+              <div class="deliverable-desc">Wrote all taglines, mission statement, messaging pillars, and voice guidelines</div>
+            </div>
+            <div class="deliverable-item">
+              <span class="deliverable-icon">🎨</span>
+              <div class="deliverable-name">Visual Direction</div>
+              <div class="deliverable-desc">Aligned copy principles with the visual system — color, typography, and UI vs marketing contexts</div>
+            </div>
+            <div class="deliverable-item">
+              <span class="deliverable-icon">📋</span>
+              <div class="deliverable-name">System Documentation</div>
+              <div class="deliverable-desc">Structured all guidelines into a usable, scannable internal reference document</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <div>
+          <div class="case-section-label">Process</div>
+          <div class="case-text">
+            <p><strong>Audience-first:</strong> I started by defining who DigiStay's primary reader is — not "hospitality decision-makers" in the abstract, but the specific person: a hotel owner or operations manager at a 1–3 star property, likely non-technical, time-poor, and deeply familiar with the real pressures of running a property. This defined the plain-language principle that runs through the entire voice system.</p>
+            <p><strong>Pillar development:</strong> I identified the four strategic messaging pillars that would anchor all communications — not as slogans, but as recurring commitments that every piece of content should reflect. These were stress-tested against the product's actual feature set and the competitive landscape.</p>
+            <p><strong>Channel differentiation:</strong> Rather than one tone guide, I built a per-channel tone matrix — recognising that the same brand voice sounds different on WhatsApp than on LinkedIn, and that product UI copy has fundamentally different requirements than a campaign static post.</p>
+            <p><strong>Do/Don't documentation:</strong> Every major section (color, typography, voice, logo) was paired with explicit Do/Don't rules — making the guidelines actionable rather than interpretive.</p>
+          </div>
+        </div>
+
+        <!-- Messaging Pillars -->
+        <div>
+          <div class="case-section-label">Messaging Pillars</div>
+          <div class="case-text"><p>Four strategic pillars that inform how DigiStay writes, presents, and positions itself across every channel:</p></div>
+          <div class="pillar-grid">
+            <div class="pillar-card">
+              <div class="pillar-name">Purposefully Built</div>
+              <div class="pillar-desc">Every feature exists because a real hotel operator needed it. Not a generic tool forced into hospitality.</div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-name">Seamlessly Connected</div>
+              <div class="pillar-desc">From booking to checkout, every stage of the guest journey flows through one system.</div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-name">Confidently Simple</div>
+              <div class="pillar-desc">AI that works in the background. No training weekends. No IT team required.</div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-name">Operator-First</div>
+              <div class="pillar-desc">We speak to the person running the property — their time, their margins, their guests.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tone Matrix -->
+        <div class="case-full">
+          <div class="case-section-label">Channel Tone Framework</div>
+          <div class="case-text"><p>A critical design decision: the same brand voice adapts its register across channels. This prevents the product from sounding like a corporate press release on WhatsApp, or like a casual social post on a pricing page.</p></div>
+          <div class="tone-row">
+            <div class="tone-card">
+              <div class="tone-channel">Website</div>
+              <div class="tone-style">Foundational & Authoritative</div>
+              <div class="tone-note">Establishes credibility. Explains features clearly. Readers make purchase decisions here.</div>
+            </div>
+            <div class="tone-card">
+              <div class="tone-channel">LinkedIn</div>
+              <div class="tone-style">Professional & Insight-Driven</div>
+              <div class="tone-note">Data points. Industry perspective. Thought leadership with substance.</div>
+            </div>
+            <div class="tone-card">
+              <div class="tone-channel">Meta (IG / FB)</div>
+              <div class="tone-style">Concise & Direct</div>
+              <div class="tone-note">Short sentences. Visual-first. Punchy hooks. One scroll = one idea.</div>
+            </div>
+            <div class="tone-card">
+              <div class="tone-channel">WhatsApp</div>
+              <div class="tone-style">Simple & Respectful</div>
+              <div class="tone-note">Conversational but polite. Never overly formal. Feels like a person, not a system.</div>
+            </div>
+            <div class="tone-card">
+              <div class="tone-channel">Video</div>
+              <div class="tone-style">Dynamic & Narrative</div>
+              <div class="tone-note">Drives emotion. Builds to a moment. Every script has a story arc.</div>
+            </div>
+            <div class="tone-card">
+              <div class="tone-channel">Static Posts</div>
+              <div class="tone-style">Minimal & Declarative</div>
+              <div class="tone-note">One idea per post. Bold claim. Clean visual. No over-explanation.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voice Do/Don't -->
+        <div class="case-full">
+          <div class="case-section-label">UX Writing & Voice Principles</div>
+          <div class="case-text"><p>The core voice principle: <strong>"Professional but simple. Avoid jargon. Every word earns its place."</strong> Written for hotel owners and staff — not Silicon Valley founders. The best DigiStay copy is clear, direct, and treats the reader as a capable professional.</p></div>
+          <div class="do-dont">
+            <div class="do-col">
+              <h5>Do</h5>
+              <ul>
+                <li>Write in plain English — short sentences work best</li>
+                <li>Lead with the benefit, then explain the feature</li>
+                <li>Use "you" and "your hotel" — speak directly to the operator</li>
+                <li>Be confident without being aggressive</li>
+              </ul>
+            </div>
+            <div class="dont-col">
+              <h5>Don't</h5>
+              <ul>
+                <li>Use tech jargon ("leverage synergies", "robust ecosystem")</li>
+                <li>Write in passive voice or over-qualify statements</li>
+                <li>Use exclamation marks excessively — it weakens authority</li>
+                <li>Sound like a generic SaaS startup — we serve real hospitality businesses</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color System -->
+        <div>
+          <div class="case-section-label">Color System — Content Context Rules</div>
+          <div class="case-text">
+            <p>A key content-system decision was <strong>separating UI colors from marketing colors</strong> — preventing the marketing accent palette (#BE0864) from bleeding into product interfaces where it would create visual confusion with functional UI states.</p>
+            <p>Semantic colors (success, warning, error, info) were documented with explicit usage rules: these exist for functional communication only and must never be used decoratively.</p>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch">
+              <div class="swatch-block" style="background:#7B2FE0;"></div>
+              <div class="swatch-hex">#7B2FE0</div>
+              <div class="swatch-name">Brand Purple</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-block" style="background:#5B1FB5;"></div>
+              <div class="swatch-hex">#5B1FB5</div>
+              <div class="swatch-name">Purple Dark</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-block" style="background:#9B5FEA;"></div>
+              <div class="swatch-hex">#9B5FEA</div>
+              <div class="swatch-name">Purple Mid</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-block" style="background:#F0E8FF; border:1px solid #d4cec4;"></div>
+              <div class="swatch-hex">#F0E8FF</div>
+              <div class="swatch-name">Purple Light</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-block" style="background:#1A1A18;"></div>
+              <div class="swatch-hex">#1A1A18</div>
+              <div class="swatch-name">Near Black</div>
+            </div>
+            <div class="swatch" style="opacity:0.6;">
+              <div class="swatch-block" style="background:#BE0864;"></div>
+              <div class="swatch-hex">#BE0864</div>
+              <div class="swatch-name">Accent (Mktg only)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-block" style="background:#16A34A;"></div>
+              <div class="swatch-hex">#16A34A</div>
+              <div class="swatch-name">Success (UI only)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch-block" style="background:#DC2626;"></div>
+              <div class="swatch-hex">#DC2626</div>
+              <div class="swatch-name">Error (UI only)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div>
+          <div class="case-section-label">Typography as Content Hierarchy</div>
+          <div class="case-text">
+            <p>The typography system was designed around <strong>functional role</strong>, not aesthetic preference. Two typefaces for UI; a separate set for marketing — each with defined roles, preventing cross-contamination between product interface and campaign creative.</p>
+            <p><strong>Inter</strong> handles all functional UI text: body copy, data, form fields, labels. <strong>Montserrat</strong> handles structural UI elements: navigation, CTAs, section labels — creating a clear visual signal that these elements require action or orientation.</p>
+            <p>Campaign fonts (Bebas Neue, Poppins, Source Sans Pro) are explicitly prohibited in product UI — a governance decision that preserves visual consistency across the product experience regardless of what marketing is running.</p>
+          </div>
+        </div>
+
+        <!-- Outcome -->
+        <div class="case-full">
+          <div class="case-highlights">
+            <div class="case-section-label">Outcome & Impact</div>
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-metric">1 system</div>
+                <div class="highlight-desc">Single reference document covering brand identity, messaging, voice, color, typography, and channel guidelines</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-metric">6 channels</div>
+                <div class="highlight-desc">Distinct tone guidelines for website, LinkedIn, Instagram/Facebook, WhatsApp, video, and static posts</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-metric">4 pillars</div>
+                <div class="highlight-desc">Strategic messaging pillars that anchor all product and marketing communication</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-metric">∞ scalable</div>
+                <div class="highlight-desc">Any new team member or agency can produce on-brand content independently — no tribal knowledge required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Applications -->
+        <div class="case-full">
+          <div class="copy-sample">
+            <div class="copy-sample-label">Why This Demonstrates Systems Thinking</div>
+            <div class="copy-headline">A brand book is infrastructure for content — not a document about design.</div>
+            <div class="copy-subhead">The DigiStay brand book functions as a decision-making tool: any content question (what tone to use, what word to choose, what color means "error") has a specific, documented answer. This reduces cognitive overhead for writers, designers, and developers — and ensures that the product communicates consistently whether the user is reading a WhatsApp message, a pricing page, or an in-app error state.</div>
+            <div class="copy-analysis"><strong>Content design principle applied:</strong> Every rule in the system exists to serve a user need — clarity for hotel operators who aren't tech-native, consistency that builds trust across repeated touchpoints, and simplicity that reduces the mental effort required to understand a complex AI product. The brand book isn't a style guide for aesthetics; it's a usability tool for communication.</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
